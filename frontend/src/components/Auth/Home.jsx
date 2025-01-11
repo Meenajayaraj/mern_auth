@@ -10,7 +10,7 @@ const Home = () => {
     const [displayText, setDisplayText] = useState('');
     const [typingCompleted, setTypingCompleted] = useState(false);
     const [userProfile, setUserProfile] = useState(null); 
-    const fullText = "I'm a Fullstack developer, Interested in MERN";
+    const fullText = "I'm an aspiring Fullstack developer, Interested in MERN";
     const navigate = useNavigate(); 
 
     useEffect(() => {
