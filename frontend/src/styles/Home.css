@@ -1,0 +1,22 @@
+/* Home.css */
+.logout-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.logout-button {
+    padding: 8px 15px;
+    font-size: 14px;
+    background-color: #ff6347;
+    /* Customize color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background-color: #ff4500;
+    /* Customize hover color */
+}

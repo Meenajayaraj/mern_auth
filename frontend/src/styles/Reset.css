@@ -1,0 +1,107 @@
+/* General Reset and Body Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f0f4f8;
+    color: #333;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Reset Password Container */
+.reset-password-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Heading Styling */
+h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Input Field Styling */
+.reset-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Button Styling */
+.reset-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0cbb69;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reset-form button:hover {
+    background-color: #068047;
+}
+
+.reset-form button:active {
+    background-color: #056b35;
+}
+
+/* Link Styling */
+.reset-link {
+    display: block;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #0cbb69;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.reset-link:hover {
+    color: #068047;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .reset-password-container {
+        padding: 30px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .reset-form button {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
