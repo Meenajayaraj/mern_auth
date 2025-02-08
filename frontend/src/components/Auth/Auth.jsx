@@ -34,16 +34,23 @@ const Auth = () => {
   const handleSignup = async (username, email, password) => {
     setLoading(true);
     try {
-      const response = await axiosInstance.post("/users/signup", { username, email, password });
-      toast.success("Signup successful, please verify your email");
-      setIsLogin(true); 
-    } catch (error) {
-      toast.error(error?.response?.data?.message || "Signup failed");
-    } finally {
-      setLoading(false);
-    }
-  };
+        const response = await axiosInstance.post("/users/signup", { username, email, password });
 
+        console.log("Signup Response:", response);  // ✅ Log response to check data
+
+        if (response.data && response.data.status === "success") {
+            toast.success(response.data.message || "Signup successful, please verify your email");
+            setIsLogin(true);  // ✅ Switch to login after successful signup
+        } else {
+            toast.error("Unexpected response format from server");
+        }
+    } catch (error) {
+        console.error("Signup Error:", error);  // ✅ Log error details
+        toast.error(error?.response?.data?.message || "Signup failed");
+    } finally {
+        setLoading(false);
+    }
+};
   return (
     <div className="auth-page">
       <div className="auth-container">
