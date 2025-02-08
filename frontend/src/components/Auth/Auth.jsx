@@ -20,7 +20,7 @@ const Auth = () => {
   const handleLogin = async (email, password) => {
     setLoading(true);
     try {
-      const response = await axiosInstance.post("/user/login", { email, password });
+      const response = await axiosInstance.post("/users/login", { email, password });
       setUser(response.data.user); 
       setIsAuthenticated(true);
       toast.success("Login successful");
@@ -34,7 +34,7 @@ const Auth = () => {
   const handleSignup = async (username, email, password) => {
     setLoading(true);
     try {
-      const response = await axiosInstance.post("/user/signup", { username, email, password });
+      const response = await axiosInstance.post("/users/signup", { username, email, password });
       toast.success("Signup successful, please verify your email");
       setIsLogin(true); 
     } catch (error) {
