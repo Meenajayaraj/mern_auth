@@ -8,9 +8,9 @@ const {
   forgotPassword,
   resetPassword,
   getProfile,
+  getUser,
 } = require("../controllers/authController");
 const isAuthenticated = require("../middlewares/isAuthenticated");
-const { getUser } = require("../controllers/authController");
 const { protect } = require("../middlewares/authMiddleware");
 
 const router = express.Router();

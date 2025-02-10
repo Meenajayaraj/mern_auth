@@ -15,16 +15,23 @@ app.use(
       "http://localhost:3000",
       "https://capstone-frontendpro.netlify.app",
     ],
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE"], // ✅ Ensure correct methods are allowed
+    credentials: true, // ✅ Allow cookies & authentication tokens
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // ✅ Ensure correct methods are allowed
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
 app.use(express.json({ limit: "10kb" }));
+
+app.use((req, res, next) => {
+  console.log(`Incoming request: ${req.method} ${req.originalUrl}`);
+  console.log("Headers:", req.headers);
+  console.log("Body:", req.body);
+  next();
+});
 
 // Users API URLs
 app.use("/api/v1/users", userRouter);
-
 
 // Handle undefined routes
 app.all("*", (req, res, next) => {
